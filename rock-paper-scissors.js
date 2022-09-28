@@ -20,7 +20,7 @@ function getComputerChoice() {
     }
 }
 
-// function to play round and determine winner based on RPS game rules
+// function to play round and determine winner based on rock, paper, scissors game rules
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
