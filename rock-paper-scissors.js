@@ -42,12 +42,18 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+/* function to play a best of five between player and computer
+   player is prompted for choice, computer is randomized
+   prints results to console after each round and keeps track of scores
+   once a score of 3 has been reached, game ends and winner is congratulated
+*/ 
 function game() {
+    // initialize player and computer scores
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i <5; i++) {
-        // initiate selections and play round
+    for (let i = 0; i < 5; i++) {
+        // initialize selections and play round
         let playerSelection = prompt("Please select rock, paper, or scissor.");
         playerSelection = playerSelection.toLowerCase();
         let computerSelection = getComputerChoice();
@@ -75,4 +81,5 @@ function game() {
     }
 }
 
+// play game
 game();
