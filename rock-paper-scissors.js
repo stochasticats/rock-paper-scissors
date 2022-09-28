@@ -65,10 +65,10 @@ function game() {
             console.log("It's a draw!");
         } else if (results[0] === 'Player') {
             playerScore++;
-            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player: ${playerScore} and Computer ${computerScore}.`)
+            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`)
         } else {
             computerScore++;
-            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player: ${playerScore} and Computer ${computerScore}.`)
+            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`)
         }
         
 
