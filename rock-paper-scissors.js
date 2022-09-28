@@ -9,13 +9,13 @@ function getComputerChoice() {
     randInt = getRandInt();
     switch (randInt) {
         case 0:
-            return "Rock";
+            return "rock";
             break;
         case 1:
-            return "Paper";
+            return "paper";
             break;
         case 2:
-            return "Scissor";
+            return "scissor";
             break;
     }
 }
@@ -25,7 +25,6 @@ function getComputerChoice() {
 */
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
         return ["Draw", 0, 0];
     } else if (playerSelection === "rock" && computerSelection === "scissor") {
@@ -43,13 +42,37 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game () {
+function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-for (let i = 0; i <5; i++) {
-        let playerSelection = prompt("Please select rock, paper, or scissor");
+    for (let i = 0; i <5; i++) {
+        // initiate selections and play round
+        let playerSelection = prompt("Please select rock, paper, or scissor.");
         playerSelection = playerSelection.toLowerCase();
         let computerSelection = getComputerChoice();
+        results = playRound(playerSelection, computerSelection);
+
+        // check who wins and update score
+        if (results[0] === "Draw") {
+            i--;
+            console.log("It's a draw!");
+        } else if (results[0] === 'Player') {
+            playerScore++;
+            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player: ${playerScore} and Computer ${computerScore}.`)
+        } else {
+            computerScore++;
+            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player: ${playerScore} and Computer ${computerScore}.`)
+        }
+        
+
+        // check if anyone has won the best of 5
+        if (playerScore === 3) {
+            console.log("Player has won the best of five.")
+        } else if (computerScore === 3) {
+            console.log("Computer has won the best of five.")
+        }
     }
 }
+
+game();
