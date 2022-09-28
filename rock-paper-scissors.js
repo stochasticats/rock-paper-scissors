@@ -20,23 +20,36 @@ function getComputerChoice() {
     }
 }
 
-// function to play round and determine winner based on rock, paper, scissors game rules
+/* function to play round and determine winner based on rock, paper, scissors game rules
+   returns array [winner, winnerSelection, loserSelection]
+*/
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
-        return "It's a draw!";
+        return ["Draw", 0, 0];
     } else if (playerSelection === "rock" && computerSelection === "scissor") {
-        return "Player wins! Rock beats scissor.";
+        return ['Player', 'Rock', 'Scissor'];
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        return "Computer wins! Paper beats rock.";
+        return ["Computer", "Paper", "Rock"];
     } else if (playerSelection === "paper" && computerSelection === "scissor") {
-        return "Computer wins! Scissor beats paper.";
+        return ["Computer", "Scissor", "Paper"];
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "Player wins! Paper beats rock.";
+        return ["Player", "Paper", "Rock"];
     } else if (playerSelection === "scissor" && computerSelection === "paper") {
-        return "Player wins! Scissor beats paper.";
+        return ["Player", "Paper", "Rock"];
     } else if (playerSelection === "scissor" && computerSelection === "rock") {
-        return "Computer wins! Rock beats scissor.";
+        return ["Computer", "Rock", "Scissor"];
+    }
+}
+
+function game () {
+    let playerScore = 0;
+    let computerScore = 0;
+
+for (let i = 0; i <5; i++) {
+        let playerSelection = prompt("Please select rock, paper, or scissor");
+        playerSelection = playerSelection.toLowerCase();
+        let computerSelection = getComputerChoice();
     }
 }
