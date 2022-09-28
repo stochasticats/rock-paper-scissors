@@ -1,2 +1,2 @@
-# rock-paper-scissors
-Implementation of rock, paper, scissors game in JavaScript
+# Rock, paper, scissors App
+Implementation of rock, paper, scissors game in JavaScript.
