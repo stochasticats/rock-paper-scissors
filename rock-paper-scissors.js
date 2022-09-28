@@ -65,18 +65,20 @@ function game() {
             console.log("It's a draw!");
         } else if (results[0] === 'Player') {
             playerScore++;
-            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`)
+            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`);
         } else {
             computerScore++;
-            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`)
+            console.log(`${results[0]} wins! ${results[1]} triumphs over ${results[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`);
         }
         
 
         // check if anyone has won the best of 5
         if (playerScore === 3) {
-            console.log("Player has won the best of five.")
+            console.log("Player has won the best of five.");
+            break;
         } else if (computerScore === 3) {
-            console.log("Computer has won the best of five.")
+            console.log("Computer has won the best of five.");
+            break;
         }
     }
 }
