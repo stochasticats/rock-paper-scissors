@@ -21,7 +21,7 @@ function getComputerChoice() {
 }
 
 /* function to play round and determine winner based on rock, paper, scissors game rules
-   returns array [winner, winnerSelection, loserSelection]
+   returns: array [winner, winnerSelection, loserSelection]
 */
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
@@ -52,16 +52,15 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
+    while (playerScore < 3 && computerScore < 3) {
         // initialize selections and play round
         let playerSelection = prompt("Please select rock, paper, or scissor.");
         playerSelection = playerSelection.toLowerCase();
         let computerSelection = getComputerChoice();
         results = playRound(playerSelection, computerSelection);
 
-        // check who wins and update score
+        // check who wins round and update score
         if (results[0] === "Draw") {
-            i--;
             console.log("It's a draw!");
         } else if (results[0] === 'Player') {
             playerScore++;
@@ -75,10 +74,8 @@ function game() {
         // check if anyone has won the best of 5
         if (playerScore === 3) {
             console.log("Player has won the best of five.");
-            break;
         } else if (computerScore === 3) {
             console.log("Computer has won the best of five.");
-            break;
         }
     }
 }
