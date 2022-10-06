@@ -54,7 +54,7 @@ buttons.forEach(button => button.addEventListener('click',
         const computerSelection = getComputerChoice();
         const winner = playRound(playerSelection, computerSelection);
         if (winner[0] === "Draw") {
-            results.textContent = "The round is a draw."
+            results.textContent = `The round is a draw. The score is Player ${playerScore} - ${computerScore} Computer.`;
         } else if (winner[0] === 'Player') {
             playerScore++;
             results.textContent = `${winner[0]} wins! ${winner[1]} triumphs over ${winner[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`;
