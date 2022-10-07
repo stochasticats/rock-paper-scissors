@@ -21,7 +21,7 @@ function getComputerChoice() {
 }
 
 /* function to play round and determine winner based on rock, paper, scissors game rules
-   returns: array [winner, winnerSelection, loserSelection]
+ *  returns: array [winner, winnerSelection, loserSelection]
 */
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -41,6 +41,28 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// function to update player and computer scores
+function updateScore(winner) {
+    if (winner[0] === "Draw") {
+        results.textContent = `The round is a draw. The score is Player ${playerScore} - ${computerScore} Computer.`;
+    } else if (winner[0] === 'Player') {
+        playerScore++;
+        results.textContent = `${winner[0]} wins! ${winner[1]} triumphs over ${winner[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`;
+    } else {
+        computerScore++;
+        results.textContent = `${winner[0]} wins! ${winner[1]} triumphs over ${winner[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`;
+    }
+}
+
+// function to check score between player and computer
+function checkScore() {
+    if (playerScore >= 5) {
+        results.textContent = `Player has won the game with 5 wins!`;
+    } else if (computerScore >= 5) {
+        results.textContent = `Computer has won the game with 5 wins!`;
+    }
+}
+
 let computerScore = 0;
 let playerScore = 0;
 
@@ -53,20 +75,7 @@ buttons.forEach(button => button.addEventListener('click',
         const playerSelection = button.value;
         const computerSelection = getComputerChoice();
         const winner = playRound(playerSelection, computerSelection);
-        if (winner[0] === "Draw") {
-            results.textContent = `The round is a draw. The score is Player ${playerScore} - ${computerScore} Computer.`;
-        } else if (winner[0] === 'Player') {
-            playerScore++;
-            results.textContent = `${winner[0]} wins! ${winner[1]} triumphs over ${winner[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`;
-        } else {
-            computerScore++;
-            results.textContent = `${winner[0]} wins! ${winner[1]} triumphs over ${winner[2]}. The score is Player ${playerScore} - ${computerScore} Computer.`;
-        }
-
-        if (playerScore >= 5) {
-            results.textContent = `Player has won the game with 5 wins!`;
-        } else if (computerScore >= 5) {
-            results.textContent = `Computer has won the game with 5 wins!`;
-        }
+        updateScore(winner);
+        checkScore();
     }
 ));
