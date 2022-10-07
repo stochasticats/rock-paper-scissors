@@ -15,12 +15,12 @@ h1 {
     flex: 1;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .buttons {
     display: flex;
     flex: 1;
-    min-height: 30vh;
     align-items: center;
     justify-content: center;
 }
@@ -37,7 +37,8 @@ button {
     border-radius: 2.5px;
     margin: 20px 50px;
     padding: 25px;
-    width: 10px;
+    max-width: 250px;
+    min-height: 150px;
 }
 
 .results {
@@ -45,4 +46,5 @@ button {
     flex: 1;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
 }
