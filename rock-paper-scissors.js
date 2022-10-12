@@ -1,23 +1,7 @@
-
-// function to return random integer between 0-2 inclusive
-function getRandInt() {
-    return Math.floor(Math.random() * 3);
-}
-
 // function to return random computer choice
 function getComputerChoice() {
-    randInt = getRandInt();
-    switch (randInt) {
-        case 0:
-            return "rock";
-            break;
-        case 1:
-            return "paper";
-            break;
-        case 2:
-            return "scissor";
-            break;
-    }
+    const choices = ["rock", "paper", "scissor"];
+    return choices[Math.floor(Math.random() * 3)];
 }
 
 /* function to play round and determine winner based on rock, paper, scissors game rules
