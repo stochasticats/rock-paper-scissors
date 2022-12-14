@@ -41,6 +41,11 @@ button {
     min-height: 150px;
 }
 
+button:hover {
+    background-color: greenyellow;
+    color: black;
+}
+
 .results {
     display: flex;
     flex: 1;
